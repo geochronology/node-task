@@ -23,6 +23,20 @@ MongoClient.connect(
 
     const db = client.db(databaseName)
 
+    db.collection('users').deleteOne({
+      age: 69 // uwu
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
+
+    // db.collection('users').deleteMany({
+    //   age: 42
+    // }).then((result) => {
+    //   console.log(result)
+    // }).catch((error) => {
+    //   console.log(error)
+    // })
+
     // ObjectId("60c53f26e9cf370d7cf62b5f")
 
     // db.collection('users').updateOne({
@@ -37,52 +51,18 @@ MongoClient.connect(
     //   console.log(err)
     // })
 
-    db.collection('tasks').updateMany({
-      completed: false
-    }, {
-      $set: {
-        completed: true
-      }
-    }).then((res) => {
-      console.log(res)
-    }).catch((err) => {
-      console.log(err)
-    })
+    // db.collection('tasks').updateMany({
+    //   completed: false
+    // }, {
+    //   $set: {
+    //     completed: true
+    //   }
+    // }).then((res) => {
+    //   console.log(res)
+    // }).catch((err) => {
+    //   console.log(err)
+    // })
 
   })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
